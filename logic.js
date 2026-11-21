@@ -2,10 +2,18 @@ let cash = (Math.random() * 40) + 10;
 let students = Math.floor(Math.random() * 100) + 1;
 let hasWon = false;
 let currentAction = "";
-let items = ["PIZZA", "BURGER", "SALAD", "JUICE", "SANDWICH", "HOTDOG", "WATER", "FRIES", "DONUT", "APPLE"];
-let prices = { PIZZA: 5, BURGER: 4, SALAD: 2, JUICE: 3, SANDWICH: 6, HOTDOG: 3.5, WATER: 1, FRIES: 2.5, DONUT: 2, APPLE: 0 };
-let owned = { PIZZA: 0, BURGER: 0, SALAD: 0, JUICE: 0, SANDWICH: 0, HOTDOG: 0, WATER: 0, FRIES: 0, DONUT: 0, APPLE: 0 };
-let prev = { PIZZA: 5, BURGER: 4, SALAD: 2, JUICE: 3, SANDWICH: 6, HOTDOG: 3.5, WATER: 1, FRIES: 2.5, DONUT: 2, APPLE: 0 };
+let items = ["BROOM", "WANDS", "MANDRAKE", "POTIONS", "QUIDDITCH", "DRAGONHIDE", "FLOO", "QUILLS", "OWL", "STONE"];
+let prices = { BROOM: 18, WANDS: 12, MANDRAKE: 8, POTIONS: 10, QUIDDITCH: 22, DRAGONHIDE: 16, FLOO: 7, QUILLS: 9, OWL: 6, STONE: 30 };
+let owned = { BROOM: 0, WANDS: 0, MANDRAKE: 0, POTIONS: 0, QUIDDITCH: 0, DRAGONHIDE: 0, FLOO: 0, QUILLS: 0, OWL: 0, STONE: 0 };
+let prev = { BROOM: 18, WANDS: 12, MANDRAKE: 8, POTIONS: 10, QUIDDITCH: 22, DRAGONHIDE: 16, FLOO: 7, QUILLS: 9, OWL: 6, STONE: 30 };
+
+const wizardingGoods = {
+    BROOM: "Nimbus school broom", WANDS: "Wand cores",
+    MANDRAKE: "Mandrake roots", POTIONS: "Potion ingredients",
+    QUIDDITCH: "Quidditch robes", DRAGONHIDE: "Dragon-hide gloves",
+    FLOO: "Floo powder tins", QUILLS: "Enchanted quills",
+    OWL: "Owl post treats", STONE: "Philosopher’s Stone replica"
+};
 
 function minus(sym) {
     let box = document.getElementById("qty-" + sym);
@@ -43,10 +51,10 @@ function execute(sym) {
             cash -= totalCost;
             owned[sym] += amount;
             prev[sym] = prices[sym];
-            if (sym === "APPLE" && !hasWon) {
-                setTimeout(() => { hasWon = true; alert("🏆 YOU WIN! You bought AAPL stock and became the ultimate trader! Even John Ternus would be proud! 🏆"); }, 100);
+            if (sym === "STONE" && !hasWon) {
+                setTimeout(() => { hasWon = true; alert("🏆 You bought the Philosopher’s Stone and became the richest trader in Hogsmeade!"); }, 100);
             }
-        } else alert("Not enough cash!");
+        } else alert("Not enough Galleons!");
     } else if (currentAction === "sell") {
         if (owned[sym] >= amount) {
             owned[sym] -= amount;
@@ -59,14 +67,14 @@ function execute(sym) {
 }
 
 function draw() {
-    document.getElementById("cash").innerText = "AED " + cash.toFixed(2);
+    document.getElementById("cash").innerText = "G " + cash.toFixed(2);
     document.getElementById("students").innerText = students;
     let totalOwned = 0, totalWorth = cash;
     for (let sym of items) {
         let price = prices[sym], diff = price - prev[sym];
         let percent = prev[sym] > 0 ? (diff / prev[sym]) * 100 : 0;
         let pxBox = document.getElementById("px-" + sym);
-        pxBox.innerText = "AED " + price.toFixed(2);
+        pxBox.innerText = "G " + price.toFixed(2);
         pxBox.className = "px" + (diff > 0.001 ? " up" : (diff < -0.001 ? " down" : ""));
         let chgBox = document.getElementById("chg-" + sym);
         if (diff > 0.001) { chgBox.innerText = "+" + diff.toFixed(2) + " (+" + percent.toFixed(1) + "%)"; chgBox.className = "chg up"; }
@@ -77,22 +85,12 @@ function draw() {
         totalWorth += owned[sym] * price;
     }
     document.getElementById("holdings").innerText = totalOwned;
-    document.getElementById("netWorth").innerText = "AED " + totalWorth.toFixed(2);
-}
-
-async function getAppleStock() {
-    try {
-        let response = await fetch("https://finnhub.io/api/v1/quote?symbol=AAPL&token=dbqmjk1r01qn88eghfsgdbqmjk1r01qn88eghft0");
-        let data = await response.json();
-        if (data.c && data.c > 0) { prev.APPLE = prices.APPLE; prices.APPLE = data.c; draw(); }
-    } catch (error) {
-        if (prices.APPLE === 0) { prices.APPLE = 180; prev.APPLE = 180; draw(); }
-    }
+    document.getElementById("netWorth").innerText = "G " + totalWorth.toFixed(2);
 }
 
 setInterval(() => {
     for (let sym of items) {
-        if (sym === "APPLE") continue;
+        if (sym === "STONE") continue;
         let randomChange = (Math.random() * 1) - 0.5;
         let multiplier = Math.max(0.2, students / 50);
         prices[sym] = Math.max(1, prices[sym] + randomChange * multiplier);
@@ -106,24 +104,23 @@ setInterval(() => {
     let isGoingUp = Math.random() > 0.5;
     let percent = Math.floor(Math.random() * 26) + 25;
     let text = isGoingUp
-        ? "📈 " + sym + " prices are rising! Students are buying before it runs out. 📈 | "
-        : "📉 " + sym + " prices dropped. Students are selling because they aren't hungry. 📉 | ";
+        ? "📈 " + wizardingGoods[sym] + " prices are rising! Hogwarts students are buying before supplies run out. 📈 | "
+        : "📉 " + wizardingGoods[sym] + " prices dropped as students sell. 📉 | ";
     prices[sym] = Math.max(1, prices[sym] * (1 + (isGoingUp ? 1 : -1) * percent / 100));
     let randomTips = [
-        "🏫 The cafeteria is getting crowded! 🏫 | ", "🎒 Remember to check your allowance! 🎒 | ",
-        "🍕 The kitchen is making a fresh batch! 🍕 | ", "🥗 Eating healthy today? 🥗 | ",
-        "🏆 Who will have the highest net worth? 🏆 | ", "📚 Don't forget to do your homework after lunch! 📚 | ",
-        "🏃‍♂️ The lunch bell is about to ring! 🏃‍♂️ | ", "💧 Stay hydrated during class! 💧 | ",
-        "🧑‍🍳 The lunch ladies are working hard today! 🧑‍🍳 | ", "🍎 Buy AAPL stock to become the ultimate trader! 🍎 | ",
-        "📉 Prices are dropping, grab a snack! 📉 | ", "📈 Demand is high, buy before it's gone! 📈 | ",
-        "🤝 Split your allowance with a friend! 🤝 | ", "⏰ Only a few minutes left of break! ⏰ | ",
-        "🥪 The sandwiches are looking fresh today! 🥪 | "
+        "🏰 Hogsmeade is busy after classes! 🏰 | ", "🪙 Check your Galleons before trading! 🪙 | ",
+        "🧹 Quidditch practice is starting soon! 🧹 | ", "🧪 Potions homework has everyone shopping! 🧪 | ",
+        "🏆 Who has the biggest vault today? 🏆 | ", "🦉 Owl Post has delivered a new rumour! 🦉 | ",
+        "📚 The library is full of spell researchers! 📚 | ", "✨ A new charm is trending in the castle! ✨ | ",
+        "🧙 The shopkeepers are opening their stalls! 🧙 | ", "💎 A mysterious stone has appeared in the market! 💎 | ",
+        "📉 Prices are falling—time to bargain! 📉 | ", "📈 Demand is rising across Hogsmeade! 📈 | ",
+        "🤝 Trade carefully; the market remembers! 🤝 | ", "⏰ The Hogwarts Express leaves soon! ⏰ | ",
+        "🪄 New enchanted goods have arrived! 🪄 | "
     ];
     let tip1 = randomTips[Math.floor(Math.random() * randomTips.length)];
     let tip2 = randomTips[Math.floor(Math.random() * randomTips.length)];
-    document.getElementById("ticker-text").innerText = text + tip1 + tip2 + "🚨 BREAKING: DPSA Canteen Stock Exchange is OPEN! 🚨 |";
+    document.getElementById("ticker-text").innerText = text + tip1 + tip2 + "🚨 BREAKING: HOGSMEADE MARKET IS OPEN! 🚨 |";
     draw();
 }, 25000);
 
-getAppleStock();
 draw();

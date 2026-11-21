@@ -8,25 +8,25 @@
   <div id="app" class="app">
     <div class="head">
       <div>
-        <h1>🏫 DPSA CSE</h1>
-        <p>🎒 DPS AJMAN CANTEEN STOCK EXCHANGE</p>
+        <h1>🪄 HOGSMEADE HUSTLE</h1>
+        <p>MAGICAL MARKET EXCHANGE</p>
       </div>
       <div class="cash">
-        <small> 💵ALLOWANCE</small>
-        <b id="cash">💵 AED 20.00</b>
+        <small>🪙 GALLEONS</small>
+        <b id="cash">G 20.00</b>
       </div>
     </div>
 
     <div class="bar">
       <span>🎓 STUDENTS: <b id="students">50</b></span>
       <span>📦 HOLDINGS: <b id="holdings">0</b></span>
-      <span>💼 NET WORTH: <b id="netWorth">AED 20.00</b></span>
+      <span>💼 NET WORTH: <b id="netWorth">G 20.00</b></span>
       <span>📈 MARKET: <b>OPEN</b></span>
     </div>
 
     <table>
       <tr>
-        <th>🍔 ITEM</th>
+        <th>🧪 ITEM</th>
         <th class="r">💰 PRICE</th>
         <th class="r">📊 CHANGE</th>
         <th class="r">📦 OWNED</th>
@@ -34,223 +34,245 @@
       </tr>
 
       <tr>
-        <td><div class="sym">🍕 PIZZA</div><div class="nm">Pepperoni Slice</div></td>
-        <td class="r"><span class="px" id="px-PIZZA"></span></td>
-        <td class="r"><span class="chg" id="chg-PIZZA"></span></td>
-        <td class="r"><span class="own" id="own-PIZZA">0</span></td>
+        <td><div class="sym">🧹 BROOMS</div><div class="nm">Nimbus school broom</div></td>
+        <td class="r"><span class="px" id="px-BROOM"></span></td>
+        <td class="r"><span class="chg" id="chg-BROOM"></span></td>
+        <td class="r"><span class="own" id="own-BROOM">0</span></td>
         <td class="r" style="text-align: center;">
-          <div id="controls-PIZZA" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
-            <button class="trade-btn" onclick="minus('PIZZA')">-</button>
-            <input type="number" class="trade-input" id="qty-PIZZA" value="1" min="1">
-            <button class="trade-btn" onclick="plus('PIZZA')">+</button>
-            <button class="trade-btn max-btn" onclick="max('PIZZA')">MAX</button>
-            <button class="trade-btn buy-btn" onclick="execute('PIZZA')">CONFIRM</button>
-            <button class="trade-btn cancel-btn" onclick="hide('PIZZA')">X</button>
+          <div id="controls-BROOM" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('BROOM')">-</button>
+            <input type="number" class="trade-input" id="qty-BROOM" value="1" min="1">
+            <button class="trade-btn" onclick="plus('BROOM')">+</button>
+            <button class="trade-btn max-btn" onclick="max('BROOM')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('BROOM')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('BROOM')">X</button>
           </div>
-          <div id="buttons-PIZZA" style="display: flex; gap: 4px; justify-content: flex-end;">
-            <button class="trade-btn buy-btn" onclick="show('PIZZA', 'buy')">BUY</button>
-            <button class="trade-btn sell-btn" onclick="show('PIZZA', 'sell')">SELL</button>
+          <div id="buttons-BROOM" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('BROOM', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('BROOM', 'sell')">SELL</button>
+          </div>
+        </td>
+      </tr>
+    <!--this part was copy pasted from the above snippet as it is tedious to write by hand -->
+      <tr>
+        <td><div class="sym">🪄 WANDS</div><div class="nm">Wand cores</div></td>
+        <td class="r"><span class="px" id="px-WANDS"></span></td>
+        <td class="r"><span class="chg" id="chg-WANDS"></span></td>
+        <td class="r"><span class="own" id="own-WANDS">0</span></td>
+        <td class="r" style="text-align: center;">
+          <div id="controls-WANDS" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('WANDS')">-</button>
+            <input type="number" class="trade-input" id="qty-WANDS" value="1" min="1">
+            <button class="trade-btn" onclick="plus('WANDS')">+</button>
+            <button class="trade-btn max-btn" onclick="max('WANDS')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('WANDS')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('WANDS')">X</button>
+          </div>
+          <div id="buttons-WANDS" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('WANDS', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('WANDS', 'sell')">SELL</button>
           </div>
         </td>
       </tr>
 
       <tr>
-        <td><div class="sym">🍔 BURGER</div><div class="nm">Beef Burger</div></td>
-        <td class="r"><span class="px" id="px-BURGER"></span></td>
-        <td class="r"><span class="chg" id="chg-BURGER"></span></td>
-        <td class="r"><span class="own" id="own-BURGER">0</span></td>
+        <td><div class="sym">🌿 MANDRAKE</div><div class="nm">Mandrake roots</div></td>
+        <td class="r"><span class="px" id="px-MANDRAKE"></span></td>
+        <td class="r"><span class="chg" id="chg-MANDRAKE"></span></td>
+        <td class="r"><span class="own" id="own-MANDRAKE">0</span></td>
         <td class="r" style="text-align: center;">
-          <div id="controls-BURGER" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
-            <button class="trade-btn" onclick="minus('BURGER')">-</button>
-            <input type="number" class="trade-input" id="qty-BURGER" value="1" min="1">
-            <button class="trade-btn" onclick="plus('BURGER')">+</button>
-            <button class="trade-btn max-btn" onclick="max('BURGER')">MAX</button>
-            <button class="trade-btn buy-btn" onclick="execute('BURGER')">CONFIRM</button>
-            <button class="trade-btn cancel-btn" onclick="hide('BURGER')">X</button>
+          <div id="controls-MANDRAKE" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('MANDRAKE')">-</button>
+            <input type="number" class="trade-input" id="qty-MANDRAKE" value="1" min="1">
+            <button class="trade-btn" onclick="plus('MANDRAKE')">+</button>
+            <button class="trade-btn max-btn" onclick="max('MANDRAKE')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('MANDRAKE')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('MANDRAKE')">X</button>
           </div>
-          <div id="buttons-BURGER" style="display: flex; gap: 4px; justify-content: flex-end;">
-            <button class="trade-btn buy-btn" onclick="show('BURGER', 'buy')">BUY</button>
-            <button class="trade-btn sell-btn" onclick="show('BURGER', 'sell')">SELL</button>
+          <div id="buttons-MANDRAKE" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('MANDRAKE', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('MANDRAKE', 'sell')">SELL</button>
           </div>
         </td>
       </tr>
 
       <tr>
-        <td><div class="sym">🥗 SALAD</div><div class="nm">Garden Salad</div></td>
-        <td class="r"><span class="px" id="px-SALAD"></span></td>
-        <td class="r"><span class="chg" id="chg-SALAD"></span></td>
-        <td class="r"><span class="own" id="own-SALAD">0</span></td>
+        <td><div class="sym">🧪 POTIONS</div><div class="nm">Potion ingredients</div></td>
+        <td class="r"><span class="px" id="px-POTIONS"></span></td>
+        <td class="r"><span class="chg" id="chg-POTIONS"></span></td>
+        <td class="r"><span class="own" id="own-POTIONS">0</span></td>
         <td class="r" style="text-align: center;">
-          <div id="controls-SALAD" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
-            <button class="trade-btn" onclick="minus('SALAD')">-</button>
-            <input type="number" class="trade-input" id="qty-SALAD" value="1" min="1">
-            <button class="trade-btn" onclick="plus('SALAD')">+</button>
-            <button class="trade-btn max-btn" onclick="max('SALAD')">MAX</button>
-            <button class="trade-btn buy-btn" onclick="execute('SALAD')">CONFIRM</button>
-            <button class="trade-btn cancel-btn" onclick="hide('SALAD')">X</button>
+          <div id="controls-POTIONS" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('POTIONS')">-</button>
+            <input type="number" class="trade-input" id="qty-POTIONS" value="1" min="1">
+            <button class="trade-btn" onclick="plus('POTIONS')">+</button>
+            <button class="trade-btn max-btn" onclick="max('POTIONS')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('POTIONS')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('POTIONS')">X</button>
           </div>
-          <div id="buttons-SALAD" style="display: flex; gap: 4px; justify-content: flex-end;">
-            <button class="trade-btn buy-btn" onclick="show('SALAD', 'buy')">BUY</button>
-            <button class="trade-btn sell-btn" onclick="show('SALAD', 'sell')">SELL</button>
+          <div id="buttons-POTIONS" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('POTIONS', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('POTIONS', 'sell')">SELL</button>
           </div>
         </td>
       </tr>
 
       <tr>
-        <td><div class="sym">🧃 JUICE</div><div class="nm">Orange Juice</div></td>
-        <td class="r"><span class="px" id="px-JUICE"></span></td>
-        <td class="r"><span class="chg" id="chg-JUICE"></span></td>
-        <td class="r"><span class="own" id="own-JUICE">0</span></td>
+        <td><div class="sym">🏏 QUIDDITCH KIT</div><div class="nm">Quidditch robes</div></td>
+        <td class="r"><span class="px" id="px-QUIDDITCH"></span></td>
+        <td class="r"><span class="chg" id="chg-QUIDDITCH"></span></td>
+        <td class="r"><span class="own" id="own-QUIDDITCH">0</span></td>
         <td class="r" style="text-align: center;">
-          <div id="controls-JUICE" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
-            <button class="trade-btn" onclick="minus('JUICE')">-</button>
-            <input type="number" class="trade-input" id="qty-JUICE" value="1" min="1">
-            <button class="trade-btn" onclick="plus('JUICE')">+</button>
-            <button class="trade-btn max-btn" onclick="max('JUICE')">MAX</button>
-            <button class="trade-btn buy-btn" onclick="execute('JUICE')">CONFIRM</button>
-            <button class="trade-btn cancel-btn" onclick="hide('JUICE')">X</button>
+          <div id="controls-QUIDDITCH" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('QUIDDITCH')">-</button>
+            <input type="number" class="trade-input" id="qty-QUIDDITCH" value="1" min="1">
+            <button class="trade-btn" onclick="plus('QUIDDITCH')">+</button>
+            <button class="trade-btn max-btn" onclick="max('QUIDDITCH')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('QUIDDITCH')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('QUIDDITCH')">X</button>
           </div>
-          <div id="buttons-JUICE" style="display: flex; gap: 4px; justify-content: flex-end;">
-            <button class="trade-btn buy-btn" onclick="show('JUICE', 'buy')">BUY</button>
-            <button class="trade-btn sell-btn" onclick="show('JUICE', 'sell')">SELL</button>
+          <div id="buttons-QUIDDITCH" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('QUIDDITCH', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('QUIDDITCH', 'sell')">SELL</button>
           </div>
         </td>
       </tr>
 
       <tr>
-        <td><div class="sym">🥪 SANDWICH</div><div class="nm">Chicken Sandwich</div></td>
-        <td class="r"><span class="px" id="px-SANDWICH"></span></td>
-        <td class="r"><span class="chg" id="chg-SANDWICH"></span></td>
-        <td class="r"><span class="own" id="own-SANDWICH">0</span></td>
+        <td><div class="sym">🐉 DRAGONHIDE</div><div class="nm">Dragon-hide gloves</div></td>
+        <td class="r"><span class="px" id="px-DRAGONHIDE"></span></td>
+        <td class="r"><span class="chg" id="chg-DRAGONHIDE"></span></td>
+        <td class="r"><span class="own" id="own-DRAGONHIDE">0</span></td>
         <td class="r" style="text-align: center;">
-          <div id="controls-SANDWICH" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
-            <button class="trade-btn" onclick="minus('SANDWICH')">-</button>
-            <input type="number" class="trade-input" id="qty-SANDWICH" value="1" min="1">
-            <button class="trade-btn" onclick="plus('SANDWICH')">+</button>
-            <button class="trade-btn max-btn" onclick="max('SANDWICH')">MAX</button>
-            <button class="trade-btn buy-btn" onclick="execute('SANDWICH')">CONFIRM</button>
-            <button class="trade-btn cancel-btn" onclick="hide('SANDWICH')">X</button>
+          <div id="controls-DRAGONHIDE" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('DRAGONHIDE')">-</button>
+            <input type="number" class="trade-input" id="qty-DRAGONHIDE" value="1" min="1">
+            <button class="trade-btn" onclick="plus('DRAGONHIDE')">+</button>
+            <button class="trade-btn max-btn" onclick="max('DRAGONHIDE')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('DRAGONHIDE')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('DRAGONHIDE')">X</button>
           </div>
-          <div id="buttons-SANDWICH" style="display: flex; gap: 4px; justify-content: flex-end;">
-            <button class="trade-btn buy-btn" onclick="show('SANDWICH', 'buy')">BUY</button>
-            <button class="trade-btn sell-btn" onclick="show('SANDWICH', 'sell')">SELL</button>
+          <div id="buttons-DRAGONHIDE" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('DRAGONHIDE', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('DRAGONHIDE', 'sell')">SELL</button>
           </div>
         </td>
       </tr>
 
       <tr>
-        <td><div class="sym">🌭 HOTDOG</div><div class="nm">Chicken Hotdog</div></td>
-        <td class="r"><span class="px" id="px-HOTDOG"></span></td>
-        <td class="r"><span class="chg" id="chg-HOTDOG"></span></td>
-        <td class="r"><span class="own" id="own-HOTDOG">0</span></td>
+        <td><div class="sym">✨ FLOO POWDER</div><div class="nm">Floo powder tins</div></td>
+        <td class="r"><span class="px" id="px-FLOO"></span></td>
+        <td class="r"><span class="chg" id="chg-FLOO"></span></td>
+        <td class="r"><span class="own" id="own-FLOO">0</span></td>
         <td class="r" style="text-align: center;">
-          <div id="controls-HOTDOG" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
-            <button class="trade-btn" onclick="minus('HOTDOG')">-</button>
-            <input type="number" class="trade-input" id="qty-HOTDOG" value="1" min="1">
-            <button class="trade-btn" onclick="plus('HOTDOG')">+</button>
-            <button class="trade-btn max-btn" onclick="max('HOTDOG')">MAX</button>
-            <button class="trade-btn buy-btn" onclick="execute('HOTDOG')">CONFIRM</button>
-            <button class="trade-btn cancel-btn" onclick="hide('HOTDOG')">X</button>
+          <div id="controls-FLOO" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('FLOO')">-</button>
+            <input type="number" class="trade-input" id="qty-FLOO" value="1" min="1">
+            <button class="trade-btn" onclick="plus('FLOO')">+</button>
+            <button class="trade-btn max-btn" onclick="max('FLOO')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('FLOO')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('FLOO')">X</button>
           </div>
-          <div id="buttons-HOTDOG" style="display: flex; gap: 4px; justify-content: flex-end;">
-            <button class="trade-btn buy-btn" onclick="show('HOTDOG', 'buy')">BUY</button>
-            <button class="trade-btn sell-btn" onclick="show('HOTDOG', 'sell')">SELL</button>
+          <div id="buttons-FLOO" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('FLOO', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('FLOO', 'sell')">SELL</button>
           </div>
         </td>
       </tr>
 
       <tr>
-        <td><div class="sym">💧 WATER</div><div class="nm">Mineral Water</div></td>
-        <td class="r"><span class="px" id="px-WATER"></span></td>
-        <td class="r"><span class="chg" id="chg-WATER"></span></td>
-        <td class="r"><span class="own" id="own-WATER">0</span></td>
+        <td><div class="sym">🪶 QUILLS</div><div class="nm">Enchanted quills</div></td>
+        <td class="r"><span class="px" id="px-QUILLS"></span></td>
+        <td class="r"><span class="chg" id="chg-QUILLS"></span></td>
+        <td class="r"><span class="own" id="own-QUILLS">0</span></td>
         <td class="r" style="text-align: center;">
-          <div id="controls-WATER" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
-            <button class="trade-btn" onclick="minus('WATER')">-</button>
-            <input type="number" class="trade-input" id="qty-WATER" value="1" min="1">
-            <button class="trade-btn" onclick="plus('WATER')">+</button>
-            <button class="trade-btn max-btn" onclick="max('WATER')">MAX</button>
-            <button class="trade-btn buy-btn" onclick="execute('WATER')">CONFIRM</button>
-            <button class="trade-btn cancel-btn" onclick="hide('WATER')">X</button>
+          <div id="controls-QUILLS" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('QUILLS')">-</button>
+            <input type="number" class="trade-input" id="qty-QUILLS" value="1" min="1">
+            <button class="trade-btn" onclick="plus('QUILLS')">+</button>
+            <button class="trade-btn max-btn" onclick="max('QUILLS')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('QUILLS')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('QUILLS')">X</button>
           </div>
-          <div id="buttons-WATER" style="display: flex; gap: 4px; justify-content: flex-end;">
-            <button class="trade-btn buy-btn" onclick="show('WATER', 'buy')">BUY</button>
-            <button class="trade-btn sell-btn" onclick="show('WATER', 'sell')">SELL</button>
+          <div id="buttons-QUILLS" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('QUILLS', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('QUILLS', 'sell')">SELL</button>
           </div>
         </td>
       </tr>
 
       <tr>
-        <td><div class="sym">🍟 FRIES</div><div class="nm">French Fries</div></td>
-        <td class="r"><span class="px" id="px-FRIES"></span></td>
-        <td class="r"><span class="chg" id="chg-FRIES"></span></td>
-        <td class="r"><span class="own" id="own-FRIES">0</span></td>
+        <td><div class="sym">🦉 OWL TREATS</div><div class="nm">Owl post treats</div></td>
+        <td class="r"><span class="px" id="px-OWL"></span></td>
+        <td class="r"><span class="chg" id="chg-OWL"></span></td>
+        <td class="r"><span class="own" id="own-OWL">0</span></td>
         <td class="r" style="text-align: center;">
-          <div id="controls-FRIES" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
-            <button class="trade-btn" onclick="minus('FRIES')">-</button>
-            <input type="number" class="trade-input" id="qty-FRIES" value="1" min="1">
-            <button class="trade-btn" onclick="plus('FRIES')">+</button>
-            <button class="trade-btn max-btn" onclick="max('FRIES')">MAX</button>
-            <button class="trade-btn buy-btn" onclick="execute('FRIES')">CONFIRM</button>
-            <button class="trade-btn cancel-btn" onclick="hide('FRIES')">X</button>
+          <div id="controls-OWL" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('OWL')">-</button>
+            <input type="number" class="trade-input" id="qty-OWL" value="1" min="1">
+            <button class="trade-btn" onclick="plus('OWL')">+</button>
+            <button class="trade-btn max-btn" onclick="max('OWL')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('OWL')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('OWL')">X</button>
           </div>
-          <div id="buttons-FRIES" style="display: flex; gap: 4px; justify-content: flex-end;">
-            <button class="trade-btn buy-btn" onclick="show('FRIES', 'buy')">BUY</button>
-            <button class="trade-btn sell-btn" onclick="show('FRIES', 'sell')">SELL</button>
+          <div id="buttons-OWL" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('OWL', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('OWL', 'sell')">SELL</button>
           </div>
         </td>
       </tr>
 
       <tr>
-        <td><div class="sym">🍩 DONUT</div><div class="nm">Chocolate Donut</div></td>
-        <td class="r"><span class="px" id="px-DONUT"></span></td>
-        <td class="r"><span class="chg" id="chg-DONUT"></span></td>
-        <td class="r"><span class="own" id="own-DONUT">0</span></td>
+        <td><div class="sym">💎 STONE</div><div class="nm">Philosopher’s Stone replica</div></td>
+        <td class="r"><span class="px" id="px-STONE"></span></td>
+        <td class="r"><span class="chg" id="chg-STONE"></span></td>
+        <td class="r"><span class="own" id="own-STONE">0</span></td>
         <td class="r" style="text-align: center;">
-          <div id="controls-DONUT" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
-            <button class="trade-btn" onclick="minus('DONUT')">-</button>
-            <input type="number" class="trade-input" id="qty-DONUT" value="1" min="1">
-            <button class="trade-btn" onclick="plus('DONUT')">+</button>
-            <button class="trade-btn max-btn" onclick="max('DONUT')">MAX</button>
-            <button class="trade-btn buy-btn" onclick="execute('DONUT')">CONFIRM</button>
-            <button class="trade-btn cancel-btn" onclick="hide('DONUT')">X</button>
+          <div id="controls-STONE" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('STONE')">-</button>
+            <input type="number" class="trade-input" id="qty-STONE" value="1" min="1">
+            <button class="trade-btn" onclick="plus('STONE')">+</button>
+            <button class="trade-btn max-btn" onclick="max('STONE')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('STONE')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('STONE')">X</button>
           </div>
-          <div id="buttons-DONUT" style="display: flex; gap: 4px; justify-content: flex-end;">
-            <button class="trade-btn buy-btn" onclick="show('DONUT', 'buy')">BUY</button>
-            <button class="trade-btn sell-btn" onclick="show('DONUT', 'sell')">SELL</button>
+          <div id="buttons-STONE" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('STONE', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('STONE', 'sell')">SELL</button>
           </div>
         </td>
       </tr>
 
       <tr>
-        <td><div class="sym">🍎 APPLE</div><div class="nm">AAPL Stock</div></td>
-        <td class="r"><span class="px" id="px-APPLE"></span></td>
-        <td class="r"><span class="chg" id="chg-APPLE"></span></td>
-        <td class="r"><span class="own" id="own-APPLE">0</span></td>
+        <td><div class="sym">🏛️ BLACKSTONE</div><div class="nm">Blackstone Group (BX)</div></td>
+        <td class="r"><span class="px" id="px-BLACKSTONE"></span></td>
+        <td class="r"><span class="chg" id="chg-BLACKSTONE"></span></td>
+        <td class="r"><span class="own" id="own-BLACKSTONE">0</span></td>
         <td class="r" style="text-align: center;">
-          <div id="controls-APPLE" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
-            <button class="trade-btn" onclick="minus('APPLE')">-</button>
-            <input type="number" class="trade-input" id="qty-APPLE" value="1" min="1">
-            <button class="trade-btn" onclick="plus('APPLE')">+</button>
-            <button class="trade-btn max-btn" onclick="max('APPLE')">MAX</button>
-            <button class="trade-btn buy-btn" onclick="execute('APPLE')">CONFIRM</button>
-            <button class="trade-btn cancel-btn" onclick="hide('APPLE')">X</button>
+          <div id="controls-BLACKSTONE" style="display: none; gap: 4px; justify-content: flex-end; align-items: center; margin-bottom: 4px;">
+            <button class="trade-btn" onclick="minus('BLACKSTONE')">-</button>
+            <input type="number" class="trade-input" id="qty-BLACKSTONE" value="1" min="1">
+            <button class="trade-btn" onclick="plus('BLACKSTONE')">+</button>
+            <button class="trade-btn max-btn" onclick="max('BLACKSTONE')">MAX</button>
+            <button class="trade-btn buy-btn" onclick="execute('BLACKSTONE')">CONFIRM</button>
+            <button class="trade-btn cancel-btn" onclick="hide('BLACKSTONE')">X</button>
           </div>
-          <div id="buttons-APPLE" style="display: flex; gap: 4px; justify-content: flex-end;">
-            <button class="trade-btn buy-btn" onclick="show('APPLE', 'buy')">BUY</button>
-            <button class="trade-btn sell-btn" onclick="show('APPLE', 'sell')">SELL</button>
+          <div id="buttons-BLACKSTONE" style="display: flex; gap: 4px; justify-content: flex-end;">
+            <button class="trade-btn buy-btn" onclick="show('BLACKSTONE', 'buy')">BUY</button>
+            <button class="trade-btn sell-btn" onclick="show('BLACKSTONE', 'sell')">SELL</button>
           </div>
         </td>
       </tr>
     </table>
+    <!--DOne-->
 
     <div class="ticker">
       <div class="ticker-content">
-        <span id="ticker-text">🚨 BREAKING: DPSA Canteen Stock Exchange is OPEN! 🚨</span>
+        <span id="ticker-text">🚨 BREAKING: HOGSMEADE MARKET IS OPEN! 🚨</span>
       </div>
     </div>
 
-    <div class="foot">🏆 CODE BATTLE 2026 - FIX YOUR SCHOOL 🏆</div>
+    <div class="foot">🏆 THE HOGSMEADE MARKET IS OPEN 🏆</div>
   </div>
 
   <script src="logic.js"></script>

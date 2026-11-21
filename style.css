@@ -1,26 +1,28 @@
-@import url('https://cdn.jsdelivr.net/npm/@fontsource/redaction-50@5.3.0/index.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Smythe&display=swap');
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Redaction 50', serif;
-    background: #FFF8EE;
-    color: #1B3B6F; 
+    font-family: 'Smythe', serif;
+    background: #172C25;
+    color: #EADBBC;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 24px 16px;
+    padding: 40px 24px;
+    font-size: 21px;
+    font-weight: 700;
 }
 
 .app {
     width: 100%;
-    max-width: 850px;
-    background: #FFFFFF;
-    border: 2px solid #F6E4C8; 
-    border-radius: 16px;
+    max-width: 1100px;
+    background: #EADBBC;
+    border: 3px solid #C69A45;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(27, 59, 111, 0.1);
+    box-shadow: 0 12px 48px rgba(23, 44, 37, 0.5);
     height: fit-content;
     margin: 0 auto;
 }
@@ -29,84 +31,100 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: #1B3B6F;
-    color: #FFF8EE;
+    padding: 30px 32px;
+    background: #172C25;
+    border-bottom: 4px solid #C69A45;
+    color: #EADBBC;
 }
 
-.head h1 { font-size: 22px; color: #FFF8EE; letter-spacing: 1px; }
-.head p { font-size: 10px; color: #A3CEF1; letter-spacing: 1px; margin-top: 4px; }
+.head h1 { font-size: 40px; color: #C69A45; letter-spacing: 2px; font-weight: 700; }
+.head p { font-size: 18px; color: #A8B9A0; letter-spacing: 1.5px; margin-top: 8px; font-weight: 700; }
 
 .cash { text-align: right; }
-.cash small { display: block; font-size: 10px; color: #A3CEF1; letter-spacing: 1px; }
-.cash b { font-size: 26px; color: #FFF8EE; font-family: 'Redaction 50', serif; }
+.cash small { display: block; font-size: 17px; color: #A8B9A0; letter-spacing: 1.5px; font-weight: 700; }
+.cash b { font-size: 44px; color: #C69A45; font-family: 'Smythe', serif; font-weight: 700; }
 
 .bar {
     display: flex;
-    gap: 16px;
-    padding: 12px 20px;
-    background: #2F6690; 
-    color: #FFF8EE;
-    font-size: 11px;
+    gap: 26px;
+    padding: 18px 32px;
+    background: #493326;
+    color: #EADBBC;
+    font-size: 19px;
     letter-spacing: 0.5px;
     flex-wrap: wrap;
     align-items: center;
+    font-weight: 700;
 }
-.bar b { color: #A3CEF1; font-family: 'Redaction 50', serif; }
+.bar b { color: #C69A45; font-family: 'Smythe', serif; font-size: 21px; font-weight: 700; }
+
+.rumour {
+    padding: 18px 32px;
+    background: #C69A45;
+    border-bottom: 3px solid #493326;
+    font-size: 20px;
+    font-weight: 700;
+    color: #172C25;
+    letter-spacing: 0.3px;
+    font-style: italic;
+}
 
 table {
-    width: 100%; 
-    border-collapse: collapse; 
-    background: #FFFFFF;
+    width: 100%;
+    border-collapse: collapse;
+    background: #EADBBC;
 }
 
 th {
-    font-size: 10px;
-    letter-spacing: 1.5px;
-    color: #2F6690;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #EADBBC;
     text-align: left;
-    padding: 12px 20px;
-    border-bottom: 2px solid #F6E4C8;
+    padding: 18px 32px;
+    background: #493326;
+    border-bottom: 3px solid #C69A45;
     font-weight: 700;
 }
 th.r, td.r { text-align: right; }
 
 td {
-    padding: 14px 20px;
-    border-bottom: 1px solid #F6E4C8;
-    font-size: 14px;
-    color: #1B3B6F;
+    padding: 20px 32px;
+    border-bottom: 1px solid #A8B9A0;
+    font-size: 21px;
+    color: #172C25;
+    background: #EADBBC;
+    font-weight: 700;
 }
-tr:hover { background: #FFF8EE; }
+tr:hover td { background: #C69A45; }
 
-.sym { font-weight: 800; color: #1B3B6F; font-family: 'Redaction 50', serif; letter-spacing: 0.5px; }
-.nm { font-size: 11px; color: #2F6690; margin-top: 3px; }
+.sym { font-weight: 700; color: #722F38; font-family: 'Smythe', serif; letter-spacing: 0.5px; font-size: 23px; }
+.nm { font-size: 18px; color: #493326; margin-top: 5px; font-style: italic; font-weight: 700; }
 
-.px { font-size: 16px; font-weight: 800; color: #1B3B6F; font-family: 'Redaction 50', serif; }
-.px.up { color: #16a34a; } 
-.px.down { color: #E06C75; } 
+.px { font-size: 25px; font-weight: 700; color: #172C25; font-family: 'Smythe', serif; }
+.px.up { color: #A8B9A0; }
+.px.down { color: #722F38; }
 
 .chg {
-    font-size: 12px;
-    padding: 3px 8px;
-    border-radius: 6px;
+    font-size: 19px;
+    padding: 5px 12px;
+    border-radius: 8px;
     display: inline-block;
-    min-width: 65px;
+    min-width: 100px;
     text-align: center;
-    font-family: 'Redaction 50', serif;
-    font-weight: 600;
+    font-family: 'Smythe', serif;
+    font-weight: 700;
 }
-.chg.up { background: rgba(22, 163, 74, 0.15); color: #16a34a; }
-.chg.down { background: rgba(224, 108, 117, 0.15); color: #E06C75; }
-.chg.flat { background: #F6E4C8; color: #2F6690; }
+.chg.up { background: rgba(168, 185, 160, 0.35); color: #2F4A3E; }
+.chg.down { background: rgba(114, 47, 56, 0.18); color: #722F38; }
+.chg.flat { background: #C69A45; color: #172C25; }
 
-.own { font-size: 13px; color: #2F6690; font-weight: 700; font-family: 'Redaction 50', serif; }
+.own { font-size: 20px; color: #722F38; font-weight: 700; font-family: 'Smythe', serif; }
 
 .ticker {
     overflow: hidden;
-    background: #F6E4C8; 
-    border-top: 1px solid #A3CEF1;
-    padding: 10px 0;
+    background: #493326;
+    border-top: 3px solid #C69A45;
+    padding: 16px 0;
     white-space: nowrap;
     display: flex;
 }
@@ -114,11 +132,12 @@ tr:hover { background: #FFF8EE; }
 .ticker-content {
     display: inline-block;
     padding-left: 100%;
-    animation: scroll 25s linear infinite;
-    font-size: 12px;
-    color: #1B3B6F;
-    font-weight: bold;
-    font-family: 'Redaction 50', serif;
+    animation: scroll 28s linear infinite;
+    font-size: 19px;
+    color: #C69A45;
+    font-weight: 700;
+    font-family: 'Smythe', serif;
+    font-style: italic;
 }
 
 @keyframes scroll {
@@ -127,50 +146,51 @@ tr:hover { background: #FFF8EE; }
 }
 
 .foot {
-    padding: 12px 20px;
-    background: #1B3B6F;
-    font-size: 10px;
-    color: #A3CEF1;
-    letter-spacing: 1.5px;
+    padding: 18px 32px;
+    background: #172C25;
+    font-size: 17px;
+    color: #C69A45;
+    letter-spacing: 2px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .trade-btn {
-    padding: 4px 6px;
-    font-size: 10px;
-    font-weight: 800;
-    border: none;
-    border-radius: 4px;
+    padding: 9px 14px;
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid #493326;
+    border-radius: 6px;
     cursor: pointer;
-    background: #1B3B6F;
-    color: white;
-    transition: transform 0.1s;
-    font-family: inherit;
+    background: #EADBBC;
+    color: #172C25;
+    transition: transform 0.1s, background 0.15s;
+    font-family: 'Smythe', serif;
 }
 .trade-btn:active { transform: scale(0.9); }
 
 .trade-input {
-    width: 40px;
-    padding: 4px;
-    font-size: 11px;
+    width: 62px;
+    padding: 7px;
+    font-size: 19px;
     text-align: center;
-    border: 1px solid #A3CEF1;
-    border-radius: 4px;
-    font-family: 'Redaction 50', serif;
-    background: #FFF8EE;
-    color: #1B3B6F;
+    border: 1px solid #493326;
+    border-radius: 6px;
+    font-family: 'Smythe', serif;
+    background: #EADBBC;
+    color: #172C25;
     outline: none;
+    font-weight: 700;
 }
 
-.buy-btn { background: #16a34a; } 
-.buy-btn:hover { background: #15803d; }
+.buy-btn { background: #A8B9A0; color: #172C25; border-color: #A8B9A0; }
+.buy-btn:hover { background: #8FA387; }
 
-.sell-btn { background: #dc2626; } 
-.sell-btn:hover { background: #b91c1c; }
+.sell-btn { background: #722F38; color: #EADBBC; border-color: #722F38; }
+.sell-btn:hover { background: #5A242C; }
 
-.max-btn { background: #2F6690; } 
-.max-btn:hover { background: #1e4a6d; }
+.max-btn { background: #493326; color: #C69A45; border-color: #493326; }
+.max-btn:hover { background: #37261C; }
 
-.cancel-btn { background: #9CA3AF; color: #1B3B6F; }
-.cancel-btn:hover { background: #6B7280; color: white; }
+.cancel-btn { background: #C69A45; color: #172C25; border-color: #C69A45; }
+.cancel-btn:hover { background: #B08838; }
