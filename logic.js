@@ -1,19 +1,49 @@
+const FINNHUB_KEY = "YOUR_FINNHUB_API_KEY";
+const FINNHUB_SYMBOL = "STNE";
+const FINNHUB_INTERVAL = 15000;
+
 let cash = (Math.random() * 40) + 10;
 let students = Math.floor(Math.random() * 100) + 1;
 let hasWon = false;
 let currentAction = "";
+
 let items = ["BROOM", "WANDS", "MANDRAKE", "POTIONS", "QUIDDITCH", "DRAGONHIDE", "FLOO", "QUILLS", "OWL", "STONE"];
+
 let prices = { BROOM: 18, WANDS: 12, MANDRAKE: 8, POTIONS: 10, QUIDDITCH: 22, DRAGONHIDE: 16, FLOO: 7, QUILLS: 9, OWL: 6, STONE: 30 };
-let owned = { BROOM: 0, WANDS: 0, MANDRAKE: 0, POTIONS: 0, QUIDDITCH: 0, DRAGONHIDE: 0, FLOO: 0, QUILLS: 0, OWL: 0, STONE: 0 };
-let prev = { BROOM: 18, WANDS: 12, MANDRAKE: 8, POTIONS: 10, QUIDDITCH: 22, DRAGONHIDE: 16, FLOO: 7, QUILLS: 9, OWL: 6, STONE: 30 };
+let owned  = { BROOM: 0, WANDS: 0, MANDRAKE: 0, POTIONS: 0, QUIDDITCH: 0, DRAGONHIDE: 0, FLOO: 0, QUILLS: 0, OWL: 0, STONE: 0 };
+let prev   = { BROOM: 18, WANDS: 12, MANDRAKE: 8, POTIONS: 10, QUIDDITCH: 22, DRAGONHIDE: 16, FLOO: 7, QUILLS: 9, OWL: 6, STONE: 30 };
 
 const wizardingGoods = {
     BROOM: "Nimbus school broom", WANDS: "Wand cores",
     MANDRAKE: "Mandrake roots", POTIONS: "Potion ingredients",
     QUIDDITCH: "Quidditch robes", DRAGONHIDE: "Dragon-hide gloves",
     FLOO: "Floo powder tins", QUILLS: "Enchanted quills",
-    OWL: "Owl post treats", STONE: "Philosopher’s Stone replica"
+    OWL: "Owl post treats", STONE: "StoneCo Ltd (STNE) — Philosopher's Stone replica"
 };
+
+async function fetchStonePrice() {
+    if (!FINNHUB_KEY || FINNHUB_KEY === "YOUR_FINNHUB_API_KEY") {
+        return;
+    }
+    try {
+        const url = `https://finnhub.io/api/v1/quote?symbol=${FINNHUB_SYMBOL}&token=${FINNHUB_KEY}`;
+        const res = await fetch(url);
+        if (!res.ok) throw new Error(`Finnhub ${res.status}`);
+        const data = await res.json();
+        if (typeof data.c === "number" && data.c > 0) {
+            const newPrice = Number(data.c.toFixed(2));
+            if (newPrice !== prices.STONE) {
+                prev.STONE = prices.STONE;
+                prices.STONE = newPrice;
+                draw();
+            }
+        }
+    } catch (e) {
+        console.warn("Finnhub fetch failed:", e.message);
+    }
+}
+fetchStonePrice();
+setInterval(fetchStonePrice, FINNHUB_INTERVAL);
 
 function minus(sym) {
     let box = document.getElementById("qty-" + sym);
@@ -52,7 +82,10 @@ function execute(sym) {
             owned[sym] += amount;
             prev[sym] = prices[sym];
             if (sym === "STONE" && !hasWon) {
-                setTimeout(() => { hasWon = true; alert("🏆 You bought the Philosopher’s Stone and became the richest trader in Hogsmeade!"); }, 100);
+                setTimeout(() => {
+                    hasWon = true;
+                    alert("🏆 You bought the Philosopher's Stone (StoneCo Ltd) and became the richest trader in Hogsmeade!");
+                }, 100);
             }
         } else alert("Not enough Galleons!");
     } else if (currentAction === "sell") {
@@ -77,9 +110,16 @@ function draw() {
         pxBox.innerText = "G " + price.toFixed(2);
         pxBox.className = "px" + (diff > 0.001 ? " up" : (diff < -0.001 ? " down" : ""));
         let chgBox = document.getElementById("chg-" + sym);
-        if (diff > 0.001) { chgBox.innerText = "+" + diff.toFixed(2) + " (+" + percent.toFixed(1) + "%)"; chgBox.className = "chg up"; }
-        else if (diff < -0.001) { chgBox.innerText = diff.toFixed(2) + " (" + percent.toFixed(1) + "%)"; chgBox.className = "chg down"; }
-        else { chgBox.innerText = "0.00"; chgBox.className = "chg flat"; }
+        if (diff > 0.001) {
+            chgBox.innerText = "+" + diff.toFixed(2) + " (+" + percent.toFixed(1) + "%)";
+            chgBox.className = "chg up";
+        } else if (diff < -0.001) {
+            chgBox.innerText = diff.toFixed(2) + " (" + percent.toFixed(1) + "%)";
+            chgBox.className = "chg down";
+        } else {
+            chgBox.innerText = "0.00";
+            chgBox.className = "chg flat";
+        }
         document.getElementById("own-" + sym).innerText = owned[sym];
         totalOwned += owned[sym];
         totalWorth += owned[sym] * price;
@@ -100,7 +140,8 @@ setInterval(() => {
 }, 2000);
 
 setInterval(() => {
-    let sym = items[Math.floor(Math.random() * (items.length - 1))];
+    let candidates = items.filter(s => s !== "STONE");
+    let sym = candidates[Math.floor(Math.random() * candidates.length)];
     let isGoingUp = Math.random() > 0.5;
     let percent = Math.floor(Math.random() * 26) + 25;
     let text = isGoingUp
@@ -112,7 +153,7 @@ setInterval(() => {
         "🧹 Quidditch practice is starting soon! 🧹 | ", "🧪 Potions homework has everyone shopping! 🧪 | ",
         "🏆 Who has the biggest vault today? 🏆 | ", "🦉 Owl Post has delivered a new rumour! 🦉 | ",
         "📚 The library is full of spell researchers! 📚 | ", "✨ A new charm is trending in the castle! ✨ | ",
-        "🧙 The shopkeepers are opening their stalls! 🧙 | ", "💎 A mysterious stone has appeared in the market! 💎 | ",
+        "🧙 The shopkeepers are opening their stalls! 🧙 | ", "💎 StoneCo (STNE) moves the Stone's price live! 💎 | ",
         "📉 Prices are falling—time to bargain! 📉 | ", "📈 Demand is rising across Hogsmeade! 📈 | ",
         "🤝 Trade carefully; the market remembers! 🤝 | ", "⏰ The Hogwarts Express leaves soon! ⏰ | ",
         "🪄 New enchanted goods have arrived! 🪄 | "

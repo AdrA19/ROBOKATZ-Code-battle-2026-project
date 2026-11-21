@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Smythe', serif;
-    background: #172C25;
+    background: #663271;
     color: #EADBBC;
     min-height: 100vh;
     display: flex;
@@ -36,7 +36,6 @@ body {
     border-bottom: 4px solid #C69A45;
     color: #EADBBC;
 }
-
 .head h1 { font-size: 40px; color: #C69A45; letter-spacing: 2px; font-weight: 700; }
 .head p { font-size: 18px; color: #A8B9A0; letter-spacing: 1.5px; margin-top: 8px; font-weight: 700; }
 
@@ -101,7 +100,7 @@ tr:hover td { background: #C69A45; }
 .nm { font-size: 18px; color: #493326; margin-top: 5px; font-style: italic; font-weight: 700; }
 
 .px { font-size: 25px; font-weight: 700; color: #172C25; font-family: 'Smythe', serif; }
-.px.up { color: #A8B9A0; }
+.px.up { color: #1F4A3A; }
 .px.down { color: #722F38; }
 
 .chg {
@@ -114,7 +113,7 @@ tr:hover td { background: #C69A45; }
     font-family: 'Smythe', serif;
     font-weight: 700;
 }
-.chg.up { background: rgba(168, 185, 160, 0.35); color: #2F4A3E; }
+.chg.up { background: rgba(31, 74, 58, 0.22); color: #1F4A3A; }
 .chg.down { background: rgba(114, 47, 56, 0.18); color: #722F38; }
 .chg.flat { background: #C69A45; color: #172C25; }
 
@@ -128,7 +127,6 @@ tr:hover td { background: #C69A45; }
     white-space: nowrap;
     display: flex;
 }
-
 .ticker-content {
     display: inline-block;
     padding-left: 100%;
@@ -139,10 +137,9 @@ tr:hover td { background: #C69A45; }
     font-family: 'Smythe', serif;
     font-style: italic;
 }
-
 @keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+0% { transform: translateX(0); }
+100% { transform: translateX(-100%); }
 }
 
 .foot {
@@ -183,8 +180,8 @@ tr:hover td { background: #C69A45; }
     font-weight: 700;
 }
 
-.buy-btn { background: #A8B9A0; color: #172C25; border-color: #A8B9A0; }
-.buy-btn:hover { background: #8FA387; }
+.buy-btn { background: #1F4A3A; color: #EADBBC; border-color: #1F4A3A; }
+.buy-btn:hover { background: #163829; }
 
 .sell-btn { background: #722F38; color: #EADBBC; border-color: #722F38; }
 .sell-btn:hover { background: #5A242C; }
