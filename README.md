@@ -49,3 +49,5 @@ Because in Hogsmeade, the market is always open — and the hustle never stops.
 
 Thank you, judges. We're happy to take any questions.
 
+
+Now moving on to the CSS, our goal was to create an authentic Hogsmeade Hustle experience that feels like a real stock market set right inside the wizarding world, using Google's Smythe font and a rich palette of deep greens, burgundies, and antique golds. We used CSS Flexbox to structure a clean, responsive trading floor layout, and added engaging micro-interactions like gold row hovers and tactile button presses. Finally, we engineered a continuous CSS keyframe animation to power our scrolling Daily Prophet market ticker at the bottom.
