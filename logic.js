@@ -1,4 +1,4 @@
-const FINNHUB_KEY = "YOUR_FINNHUB_API_KEY";
+const FINNHUB_KEY = "dc0kejpr01qs4ks4i750dc0kejpr01qs4ks4i75g";
 const FINNHUB_SYMBOL = "STNE";
 const FINNHUB_INTERVAL = 15000;
 
@@ -22,9 +22,6 @@ const wizardingGoods = {
 };
 
 async function fetchStonePrice() {
-    if (!FINNHUB_KEY || FINNHUB_KEY === "YOUR_FINNHUB_API_KEY") {
-        return;
-    }
     try {
         const url = `https://finnhub.io/api/v1/quote?symbol=${FINNHUB_SYMBOL}&token=${FINNHUB_KEY}`;
         const res = await fetch(url);

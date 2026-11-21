@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Smythe', serif;
-    background: #663271;
+    background: #172C25;
     color: #EADBBC;
     min-height: 100vh;
     display: flex;
@@ -32,7 +32,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px 32px;
-    background: #172C25;
+    background: #663271;
     border-bottom: 4px solid #C69A45;
     color: #EADBBC;
 }
@@ -144,7 +144,7 @@ tr:hover td { background: #C69A45; }
 
 .foot {
     padding: 18px 32px;
-    background: #172C25;
+    background: #663271;
     font-size: 17px;
     color: #C69A45;
     letter-spacing: 2px;
