@@ -1,0 +1,176 @@
+@import url('https://cdn.jsdelivr.net/npm/@fontsource/redaction-50@5.3.0/index.min.css');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Redaction 50', serif;
+    background: #FFF8EE;
+    color: #1B3B6F; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 24px 16px;
+}
+
+.app {
+    width: 100%;
+    max-width: 850px;
+    background: #FFFFFF;
+    border: 2px solid #F6E4C8; 
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(27, 59, 111, 0.1);
+    height: fit-content;
+    margin: 0 auto;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #1B3B6F;
+    color: #FFF8EE;
+}
+
+.head h1 { font-size: 22px; color: #FFF8EE; letter-spacing: 1px; }
+.head p { font-size: 10px; color: #A3CEF1; letter-spacing: 1px; margin-top: 4px; }
+
+.cash { text-align: right; }
+.cash small { display: block; font-size: 10px; color: #A3CEF1; letter-spacing: 1px; }
+.cash b { font-size: 26px; color: #FFF8EE; font-family: 'Redaction 50', serif; }
+
+.bar {
+    display: flex;
+    gap: 16px;
+    padding: 12px 20px;
+    background: #2F6690; 
+    color: #FFF8EE;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.bar b { color: #A3CEF1; font-family: 'Redaction 50', serif; }
+
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+    background: #FFFFFF;
+}
+
+th {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #2F6690;
+    text-align: left;
+    padding: 12px 20px;
+    border-bottom: 2px solid #F6E4C8;
+    font-weight: 700;
+}
+th.r, td.r { text-align: right; }
+
+td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #F6E4C8;
+    font-size: 14px;
+    color: #1B3B6F;
+}
+tr:hover { background: #FFF8EE; }
+
+.sym { font-weight: 800; color: #1B3B6F; font-family: 'Redaction 50', serif; letter-spacing: 0.5px; }
+.nm { font-size: 11px; color: #2F6690; margin-top: 3px; }
+
+.px { font-size: 16px; font-weight: 800; color: #1B3B6F; font-family: 'Redaction 50', serif; }
+.px.up { color: #16a34a; } 
+.px.down { color: #E06C75; } 
+
+.chg {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: inline-block;
+    min-width: 65px;
+    text-align: center;
+    font-family: 'Redaction 50', serif;
+    font-weight: 600;
+}
+.chg.up { background: rgba(22, 163, 74, 0.15); color: #16a34a; }
+.chg.down { background: rgba(224, 108, 117, 0.15); color: #E06C75; }
+.chg.flat { background: #F6E4C8; color: #2F6690; }
+
+.own { font-size: 13px; color: #2F6690; font-weight: 700; font-family: 'Redaction 50', serif; }
+
+.ticker {
+    overflow: hidden;
+    background: #F6E4C8; 
+    border-top: 1px solid #A3CEF1;
+    padding: 10px 0;
+    white-space: nowrap;
+    display: flex;
+}
+
+.ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 25s linear infinite;
+    font-size: 12px;
+    color: #1B3B6F;
+    font-weight: bold;
+    font-family: 'Redaction 50', serif;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.foot {
+    padding: 12px 20px;
+    background: #1B3B6F;
+    font-size: 10px;
+    color: #A3CEF1;
+    letter-spacing: 1.5px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.trade-btn {
+    padding: 4px 6px;
+    font-size: 10px;
+    font-weight: 800;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #1B3B6F;
+    color: white;
+    transition: transform 0.1s;
+    font-family: inherit;
+}
+.trade-btn:active { transform: scale(0.9); }
+
+.trade-input {
+    width: 40px;
+    padding: 4px;
+    font-size: 11px;
+    text-align: center;
+    border: 1px solid #A3CEF1;
+    border-radius: 4px;
+    font-family: 'Redaction 50', serif;
+    background: #FFF8EE;
+    color: #1B3B6F;
+    outline: none;
+}
+
+.buy-btn { background: #16a34a; } 
+.buy-btn:hover { background: #15803d; }
+
+.sell-btn { background: #dc2626; } 
+.sell-btn:hover { background: #b91c1c; }
+
+.max-btn { background: #2F6690; } 
+.max-btn:hover { background: #1e4a6d; }
+
+.cancel-btn { background: #9CA3AF; color: #1B3B6F; }
+.cancel-btn:hover { background: #6B7280; color: white; }
