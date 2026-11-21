@@ -1,54 +1,51 @@
-Good morning, respected judges.
+AATIR (Opening)
+Good afternoon, judges. Have you ever wondered what it would feel like to be transported straight into the world of Hogwarts — to walk the cobbled streets of Hogsmeade, Galleons jingling in your pocket, surrounded by brooms, wands, and every magical trinket a young witch or wizard could dream of?
 
-We are Aatir, Adra and Mahran, and today we are presenting our project, Hogsmeade Hustle!
+Well, that's exactly where we're taking you today.
 
-Imagine entering a magical marketplace where you can buy enchanted products, trade magical goods and watch prices change.
+But this isn't just a stroll through the village. Imagine that same magical world — but now it's a living, breathing marketplace. Prices rise and fall. Students rush in after classes, buying up supplies before they run out. A single rumour can send the cost of Mandrake roots soaring, or send Dragon-hide gloves crashing overnight. And right in the middle of it all — you. One trader. One vault of Galleons. One goal: build the greatest fortune Hogsmeade has ever seen.
 
-Inspired by the magical world of Harry Potter, we wanted to combine fantasy with a real-world concept: the stock market.
+That is Hogsmeade Hustle — a magical market exchange where the wizarding world meets the trading floor.
 
-My responsibility was working on the CSS, which controls the appearance and design of our website.
+We built this as a fully interactive trading experience. You start with a modest pouch of Galleons, and a market full of opportunity in front of you. Brooms. Wand cores. Potions ingredients. Quidditch gear. Even enchanted quills and owl treats. Every item has a price, and every price is alive — shifting with student demand, market rumours, and the rhythm of the village itself.
 
-We chose forest green, antique gold, cream and dark brown to create an enchanted marketplace atmosphere.
+But here's the twist that makes our project truly special. One of the items in our market isn't magical at all. It's StoneCo Ltd — a real company, trading on the real stock market. Its price in our game is pulled live from real financial data, updating every fifteen seconds. The Philosopher's Stone replica, as we call it, moves with the real world. And legend has it, in our game, whoever manages to claim it becomes the richest trader in all of Hogsmeade.
 
-I worked on the colours, fonts, layouts, spacing, buttons and overall styling. We also added hover effects and animations to make the website more engaging.
+So whether you're a bargain hunter, a risk-taker, or a patient investor — the market is open, and it's waiting for you.
 
-Our goal was to make the website visually appealing while keeping it easy to use.
+Now, to walk you through how it all actually plays — here's [your name].
 
-Now that you've seen the design and visual experience of Hogsmeade Hustle, let's take a look behind the scenes and understand how we structured the website. Adra will walk you through that.
+[YOU] (Middle)
+Thank you, Aatir. So let me show you what it's actually like to step into the trader's shoes.
 
-2. Adra – HTML
-HTML is the foundation of our website. It provides the basic structure and tells the browser what elements should appear on the page.
+When you open Hogsmeade Hustle, you're greeted with your dashboard — your Galleons on one side, and the heartbeat of the market on the other. Students, holdings, net worth, all updating in real time. You always know exactly where you stand.
 
-My responsibility was working on the HTML.
+Now, the market itself. Every item you see has three things you need to watch: its current price, its change — whether it's climbing or falling — and how many you already own. That change indicator? That's your signal. Green means the market is heating up. Red means it's cooling down. And the savvy trader knows exactly when to strike.
 
-We used HTML to create the headings, navigation, product table, trading dashboard, buttons and different sections of the website.
+Trading is simple, but it's not easy. Tap BUY, choose how many you want — or hit MAX to go all in — and confirm. Tap SELL to cash out. Every trade is instant, and every Galleon matters. You have to decide: do I hold and wait for a better price? Or do I sell now and lock in my profit? That's the hustle. That's the game.
 
-For example, the product table allows users to view the different magical products and their prices in an organised way.
+And here's where it gets interesting. This market doesn't sit still. Every couple of seconds, prices shift on their own — driven by how many students are in the village. More students means more demand, and more demand means bigger swings. So the market has a personality. It has moods. And you have to learn to read it.
 
-Think of HTML as the skeleton of a website, because it provides the structure that CSS styles and JavaScript makes interactive.
+Then there's the ticker — the town crier, if you like. It scrolls along the bottom with breaking news and market rumours. "Broom prices are rising — students are buying before supplies run out." "Mandrake roots dropped as students sell." These aren't just flavour text — they're real price shocks hitting the market, sending items up or down by as much as fifty percent. If you're watching the ticker, you can get ahead of the crowd. If you're not — well, you might just miss the deal of a lifetime.
 
-So, that's how we built the structure of our marketplace. But what actually brings it to life is the code that makes everything interactive. Mahran will now explain how the JavaScript works.
+And of course, there's the Stone — the live one. Because that price comes from the real world, it moves differently from everything else. It's unpredictable, it's real, and it's the ultimate prize. Buying it isn't just a trade — it's a trophy. It's the endgame.
 
-3. Mahran – JavaScript + Conclusion
-JavaScript is what makes Hogsmeade Hustle interactive.
+So the loop is: watch the market, read the signals, time your trades, and grow your vault. Simple to pick up. Deep enough to master. And wrapped in a world that feels like home to anyone who's ever dreamed of Hogwarts.
 
-My responsibility was working on the JavaScript, which controls the functionality and logic of our marketplace.
+Now, to bring it all together — here's Mahran.
 
-For example, when someone buys a magical product, JavaScript checks whether they have enough Galleons. If they do, it deducts the price and updates their holdings.
+MAHRAN (Ending)
+Thank you. So let me bring it all home.
 
-We also created a simulated dynamic pricing system. Every two seconds, product prices can change, and the number of Hogwarts students influences the size of those changes.
+Hogsmeade Hustle is more than just a trading game. It's a bridge between two worlds — the fantasy of Hogwarts and the real, unpredictable rhythm of the financial markets. It takes something as intimidating as trading and wraps it in something as beloved and familiar as the wizarding world. And in doing so, it makes learning about markets, risk, and decision-making genuinely fun.
 
-Every 25 seconds, random market events can cause additional price movements.
+What we've built is a complete, self-contained experience. A living market that never sits still. Real-time data from the real world. A rumour mill that keeps you on your toes. And a clear, rewarding goal — build your fortune, claim the Stone, and become the richest trader in Hogsmeade.
 
-We also connected the Finnhub API to retrieve a real stock quote for StoneCo, which we creatively represented as the Philosopher's Stone.
+But what we're most proud of is how it feels. It feels magical. It feels alive. It feels like you've actually stepped into Hogsmeade, and the market is waiting just for you.
 
-During development, we used AI as an assistant to brainstorm ideas, explore design possibilities, understand coding concepts and identify potential errors.
+So we invite you to try it. Watch the ticker. Time your trades. Take a risk. And see if you can out-hustle the market.
 
-However, we made our own decisions about the theme, features and final design, and tested the website to make sure it worked as intended.
+Because in Hogsmeade, the market is always open — and the hustle never stops.
 
-Overall, this project helped us understand how HTML, CSS and JavaScript work together to create an interactive website.
-
-Our goal was to create more than just a website. We wanted to build an experience where imagination meets innovation.
-
-Thank you, respected judges. Welcome to Hogsmeade!
+Thank you, judges. We're happy to take any questions.
 
